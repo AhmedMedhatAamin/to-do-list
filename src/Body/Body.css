@@ -1,0 +1,153 @@
+/* Container for the to-do list */
+.todo-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f4f4f4;
+    border-radius: 8px;
+}
+
+/* Flex layout for adding tasks */
+.add-task {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.add-task input,
+.add-task select,
+.add-task input[type="date"],
+.add-task button {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Responsive button and task input alignment */
+.add-task button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* Task list */
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+/* Task item layout */
+.task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    flex-wrap: wrap;
+}
+
+/* Completed tasks have strikethrough */
+.task-item.completed .task-text {
+    text-decoration: line-through;
+}
+
+/* Task text */
+.task-text {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* Priority label */
+.priority {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+/* Priority levels */
+.priority.low {
+    background-color: lightgreen;
+}
+
+.priority.medium {
+    background-color: yellow;
+}
+
+.priority.high {
+    background-color: red;
+    color: white;
+}
+
+/* Due date styling */
+.due-date {
+    margin-left: 10px;
+}
+
+/* Overdue task styling */
+.task-item.overdue {
+    background-color: #ffe5e5;
+    border-color: red;
+}
+
+/* Overdue label */
+.overdue-label {
+    background-color: red;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+
+    /* Make the container responsive */
+    .todo-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    /* Stack task input elements */
+    .add-task {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Full width for inputs and select fields */
+    .add-task input,
+    .add-task select,
+    .add-task input[type="date"],
+    .add-task button {
+        width: 100%;
+    }
+
+    /* Adjust the task item to wrap content */
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Make task text and actions full width on smaller screens */
+    .task-text,
+    .priority,
+    .due-date,
+    .overdue-label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    /* Align checkbox and delete button */
+    .task-item input[type="checkbox"],
+    .task-item button {
+        width: auto;
+        margin-bottom: 5px;
+    }
+
+    /* Hide overflow if needed */
+    .todo-container {
+        overflow-x: hidden;
+    }
+}
